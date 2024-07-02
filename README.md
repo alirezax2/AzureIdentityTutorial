@@ -110,3 +110,20 @@ OpenID Connect adds more structure but also more complexity.
 
 In practice, many modern implementations use both protocols together. OpenID Connect is used for authenticating the user, while OAuth 2.0 is used for authorizing access to specific resources. This combination provides a comprehensive solution for both authentication and authorization in web and mobile applications.
 
+## Client Type:
+**Public Client:** Typically used for mobile or desktop apps where the client secret can't be securely stored.
+**Confidential Client:** Used for server-side applications where the client secret can be securely stored. use client credentials (client_id and client_secret) that are only applicable for confidential clients
+
+### Steps to Configure as a Confidential Client
+Azure Portal Configuration:
+Go to the Azure Portal.
+Navigate to Azure Active Directory > App registrations.
+Select your application.
+Under Authentication, ensure that you have configured a platform (like Web) with the correct redirect URIs set.
+Under Certificates & secrets, ensure you have a client secret generated.
+Flask App Configuration:
+Ensure you are using the correct libraries and configuration for a confidential client in your Flask app.
+Use client_id, client_secret, and tenant_id in your configuration.
+
+
+
